@@ -1241,7 +1241,7 @@
         }
         addRow() {
             const blade = this.addBlade({ view: 'tableRow', label: "" });
-            
+
             {
                 const element = blade.controller_.view.element;
                 element.style.setProperty("display", "flex");
@@ -1261,7 +1261,7 @@
                 element.style.setProperty("align-items", "flex-end");
                 element.style.setProperty("justify-content", "space-between");
             }
-            
+
             return pane;
         }
         remove(api) {
@@ -8396,7 +8396,8 @@ function CSS() {
     position: absolute;
     top: 8px;
     right: 8px;
-    width: 256px
+    width: 256px;
+    z-index: 10000;
 }
 
 .tp-fldv.tp-fldv-not .tp-fldv_b {

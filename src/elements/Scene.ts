@@ -7,7 +7,11 @@ import {
 import { gameObjList } from "../utils/globals";
 import addCamera from "./Camera";
 
-export default function addScene(pane: any, scene: Phaser.Scene) {
+export default function addScene(pane: any, scene: Phaser.Scene | null) {
+    if (!scene) {
+        return;
+    }
+
     const folder = pane.addFolder({
         title: `Scene "${scene.scene.key}"`,
         expanded: false,
@@ -202,7 +206,7 @@ function addSearch(folder: any, scene: Phaser.Scene) {
         searchResult = [];
     });
 
-    // --- 
+    // ---
 
     btn.on("click", () => {
         updateBtn((enabled = !enabled));

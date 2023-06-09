@@ -42,9 +42,10 @@ export default function overwriteGame() {
                 game.scene.add = function (
                     key: string,
                     scene: Phaser.Scene,
-                    autoStart: boolean
+                    autoStart: boolean,
+                    data: object,
                 ) {
-                    const obj = method.call(game.scene, key, scene, autoStart);
+                    const obj = method.call(game.scene, key, scene, autoStart, data);
                     addScene(scenesFolder, obj);
                     return obj;
                 };
